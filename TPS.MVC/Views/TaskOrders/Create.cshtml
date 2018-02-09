@@ -1,0 +1,113 @@
+﻿@model TaskOrder
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create A New Task Order</h2>
+
+<hr />
+
+<form asp-action="Create">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TaskNumber" class="control-label"></label>
+                <input asp-for="TaskNumber" class="form-control" />
+                <span asp-validation-for="TaskNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SponsorId" class="control-label"></label>
+                <select asp-for="SponsorId" class="form-control" asp-items="ViewBag.SponsorId"></select>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="ApprovalStatusId" class="control-label"></label>
+                <select asp-for="ApprovalStatusId" class="form-control" asp-items="ViewBag.ApprovalStatusId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateApproval" class="control-label"></label>
+                <input asp-for="DateApproval" class="form-control" />
+                <span asp-validation-for="DateApproval" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DatePlacedOnContract" class="control-label"></label>
+                <input asp-for="DatePlacedOnContract" class="form-control" />
+                <span asp-validation-for="DatePlacedOnContract" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="Funding.FundingAmount" class="control-label"></label>
+                <input asp-for="Funding.FundingAmount" class="form-control" />
+                <span asp-validation-for="Funding.FundingAmount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Funding.FundingCategoryId" class="control-label"></label>
+                <select asp-for="Funding.FundingCategoryId" class="form-control" asp-items="ViewBag.FundingCategoryId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateStart" class="control-label"></label>
+                <input asp-for="DateStart" class="form-control"/>
+                <span asp-validation-for="DateStart" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateEnd" class="control-label"></label>
+                <input asp-for="DateEnd" class="form-control"/>
+                <span asp-validation-for="DateEnd" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label asp-for="Abstract" class="control-label"></label>
+                <textarea asp-for="Abstract" class="form-control" row="5"></textarea>
+                <span asp-validation-for="Abstract" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="Objective" class="control-label"></label>
+                <textarea asp-for="Objective" class="form-control" rows="3"></textarea>
+                <span asp-validation-for="Objective" class="text-danger"></span>
+            </div>
+            
+            
+            <div class="form-group">
+                <label asp-for="DateSignedBySponsor" class="control-label"></label>
+                <input asp-for="DateSignedBySponsor" class="form-control" />
+                <span asp-validation-for="DateSignedBySponsor" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <label asp-for="AnticipatedAudienceId" class="control-label"></label>
+                <select asp-for="AnticipatedAudienceId" class="form-control" asp-items="ViewBag.AnticipatedAudienceId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="VisibilityLevelId" class="control-label"></label>
+                <select asp-for="VisibilityLevelId" class="form-control" asp-items="ViewBag.VisibilityLevelId"></select>
+            </div>
+
+        </div>
+    </div>
+    <div class="form-group">
+         <input type="submit" value="Create" class="btn btn-default" />
+    </div>
+</form>
+
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

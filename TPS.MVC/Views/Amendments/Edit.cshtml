@@ -1,0 +1,86 @@
+﻿@model TPS.Core.Models.Amendment
+
+@{
+    Layout = null;
+}
+
+<form asp-controller="Amendments" asp-action="Edit">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="Title" class="control-label"></label>
+        <input asp-for="Title" class="form-control"/>
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Abstract" class="control-label"></label>
+        <input asp-for="Abstract" class="form-control"/>
+        <span asp-validation-for="Abstract" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Objective" class="control-label"></label>
+        <input asp-for="Objective" class="form-control"/>
+        <span asp-validation-for="Objective" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="TaskNumber" class="control-label"></label>
+        <input asp-for="TaskNumber" class="form-control"/>
+        <span asp-validation-for="TaskNumber" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ApprovalStatusId" class="control-label"></label>
+        <input asp-for="ApprovalStatusId" class="form-control"/>
+        <span asp-validation-for="ApprovalStatusId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ProjectNumber" class="control-label"></label>
+        <input asp-for="ProjectNumber" class="form-control"/>
+        <span asp-validation-for="ProjectNumber" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="FundingAmount" class="control-label"></label>
+        <input asp-for="FundingAmount" class="form-control"/>
+        <span asp-validation-for="FundingAmount" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="FundingCategoryId" class="control-label"></label>
+        <select asp-for="FundingCategoryId" class="form-control" asp-items="ViewBag.FundingCategoryId"></select>
+        <span asp-validation-for="FundingCategoryId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="DateSignedBySponsor" class="control-label"></label>
+        <input asp-for="DateSignedBySponsor" class="form-control"/>
+        <span asp-validation-for="DateSignedBySponsor" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="DateStart" class="control-label"></label>
+        <input asp-for="DateStart" class="form-control"/>
+        <span asp-validation-for="DateStart" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="DateEnd" class="control-label"></label>
+        <input asp-for="DateEnd" class="form-control"/>
+        <span asp-validation-for="DateEnd" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="AnticipatedAudienceId" class="control-label"></label>
+        <select asp-for="AnticipatedAudienceId" class="form-control" asp-items="ViewBag.AnticipatedAudienceId"></select>
+        <span asp-validation-for="AnticipatedAudienceId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="VisibilityLevelId" class="control-label"></label>
+        <select asp-for="VisibilityLevelId" class="form-control" asp-items="ViewBag.VisibilityLevelId"></select>
+        <span asp-validation-for="VisibilityLevelId" class="text-danger"></span>
+    </div>
+    <input type="hidden" asp-for="Id"/>
+    <input type="hidden" asp-for="TaskOrderId"/>
+    <div class="form-group">
+        <input type="submit" value="Save" class="btn btn-default"/>
+    </div>
+</form>
+
+<script>
+    jquery.validator.unobtrusive.parse($("form"));
+</script>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

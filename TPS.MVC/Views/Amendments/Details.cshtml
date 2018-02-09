@@ -1,0 +1,92 @@
+﻿@model TPS.Core.Models.Amendment
+
+<div>
+    <h4>Amendment</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-9">
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Title)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Title)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Abstract)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Abstract)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Objective)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Objective)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.TaskNumber)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.TaskNumber)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.ApprovalStatus)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.ApprovalStatus)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.ProjectNumber)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.ProjectNumber)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.DateSignedBySponsor)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.DateSignedBySponsor)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.DateStart)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.DateStart)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.DateEnd)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.DateEnd)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.AnticipatedAudience)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.AnticipatedAudience.Name)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Funding.FundingCategory)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Funding.FundingCategory.Name)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.VisibilityLevel)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.VisibilityLevel.Name)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.TaskOrder)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.TaskOrder.Abstract)
+                </dd>
+            </dl>
+        </div>
+
+    </div>
+</div>
+
